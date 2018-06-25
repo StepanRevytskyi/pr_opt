@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">pr_opt</string>
+    <string name="example_email_tetx">example@gmail.com</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="example_password_text">password</string>
+    <string name="forgot_password_text">Forgot password?</string>
+    <string name="sign_in_text">Sign in</string>
 </resources>
