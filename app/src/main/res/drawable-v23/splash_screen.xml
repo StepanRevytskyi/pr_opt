@@ -4,6 +4,8 @@
 
     <item
         android:drawable="@drawable/ic_eyeglasses"
-        android:gravity="center" />
+        android:gravity="center" 
+        android:height="160dp"
+        android:width="160dp"/>
 
 </layer-list>

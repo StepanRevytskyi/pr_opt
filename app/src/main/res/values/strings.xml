@@ -6,4 +6,6 @@
     <string name="example_password_text">password</string>
     <string name="forgot_password_text">Forgot password?</string>
     <string name="sign_in_text">Sign in</string>
+    <string name="logo_text">logo</string>
+    <string name="company_name">PRIMA optika</string>
 </resources>

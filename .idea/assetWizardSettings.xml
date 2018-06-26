@@ -28,12 +28,13 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="009688" />
-                            <entry key="height" value="28" />
-                            <entry key="outputName" value="ic_lock_28dp" />
+                            <entry key="height" value="60" />
+                            <entry key="outputName" value="ic_eyeglasses" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\aronDillQs5328" />
-                            <entry key="width" value="28" />
+                            <entry key="sourceFile" value="D:\Download\eyeglasses (1).svg" />
+                            <entry key="width" value="60" />
                           </map>
                         </option>
                       </PersistentState>
