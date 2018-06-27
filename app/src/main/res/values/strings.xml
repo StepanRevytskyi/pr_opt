@@ -8,4 +8,7 @@
     <string name="sign_in_text">Sign in</string>
     <string name="logo_text">logo</string>
     <string name="company_name">PRIMA optika</string>
+    <string name="incorrect_user_information">Please check the correct email or password</string>
+    <string name="wait_text">Please wait</string>
+    <string name="auth_failed">Could not login please check the data</string>
 </resources>
