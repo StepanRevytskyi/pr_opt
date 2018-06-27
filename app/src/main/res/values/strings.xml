@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">pr_opt</string>
-    <string name="example_email_tetx">example@gmail.com</string>
+    <string name="example_email_text">example@gmail.com</string>
     <string name="email_text">Email</string>
     <string name="password_text">Password</string>
     <string name="example_password_text">password</string>
@@ -11,4 +11,8 @@
     <string name="incorrect_user_information">Please check the correct email or password</string>
     <string name="wait_text">Please wait</string>
     <string name="auth_failed">Could not login please check the data</string>
+    <string name="restore_password_button_text">Restore</string>
+    <string name="incorrect_email">Please check the correct email</string>
+    <string name="check_email">Please check your email</string>
+    <string name="arrow_back_desc">back</string>
 </resources>

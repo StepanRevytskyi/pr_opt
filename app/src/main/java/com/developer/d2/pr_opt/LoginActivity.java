@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isEmptyTextFields(mUserEmailEditText, mUserPasswordEditText)) {
-                    showProgresDialog();
+                    showProgressDialog();
 
                     String userEmail = mUserEmailEditText.getText().toString();
                     String userPassword = mUserPasswordEditText.getText().toString();
@@ -68,9 +68,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        mForgotPasswordTextView = findViewById(R.id.forgot_password_text_view);
+        mForgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RestorePasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
-    private void showProgresDialog() {
+    private void showProgressDialog() {
         mProgressDialog = new ProgressDialog(LoginActivity.this);
         mProgressDialog.setTitle(R.string.sign_in_text);
         mProgressDialog.setMessage(getResources().getString(R.string.wait_text));
