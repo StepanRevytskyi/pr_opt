@@ -60,6 +60,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/login_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/email_text"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/user_email_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/user_email_edit_text" />
+
         <EditText
             android:id="@+id/user_email_edit_text"
             android:layout_width="0dp"
@@ -83,17 +94,6 @@
             app:layout_constraintStart_toEndOf="@+id/login_image_view"
             app:layout_constraintTop_toTopOf="@+id/login_guideline" />
 
-        <TextView
-            android:id="@+id/login_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@string/email_text"
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/user_email_edit_text"
-            app:layout_constraintStart_toStartOf="@+id/user_email_edit_text" />
-
         <ImageView
             android:id="@+id/login_image_view"
             android:layout_width="wrap_content"
@@ -114,6 +114,17 @@
             app:layout_constraintEnd_toEndOf="@+id/user_email_edit_text"
             app:layout_constraintStart_toStartOf="@+id/user_email_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/user_email_edit_text" />
+
+        <TextView
+            android:id="@+id/login_text_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/password_text"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/user_password_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/user_password_edit_text" />
 
         <EditText
             android:id="@+id/user_password_edit_text"
@@ -137,17 +148,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/login_image_view2"
             app:layout_constraintTop_toBottomOf="@+id/login_view" />
-
-        <TextView
-            android:id="@+id/login_text_view2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@string/password_text"
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/user_password_edit_text"
-            app:layout_constraintStart_toStartOf="@+id/user_password_edit_text" />
 
         <ImageView
             android:id="@+id/login_image_view2"
@@ -194,7 +194,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:focusable="auto"
+            android:focusable="true"
             android:gravity="center"
             android:text="@string/forgot_password_text"
             android:textColor="@color/colorSecondaryText"
