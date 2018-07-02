@@ -1,5 +1,6 @@
 package com.developer.d2.pr_opt;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,7 @@ public class RestorePasswordActivity extends AppCompatActivity {
     private ImageView mArrowBackImageView;
     private EditText mUserEmailEditText;
     private Button mRestoreButton;
-
+    private ProgressDialog mProgressDialog;
     private FirebaseAuth mFirebaseAuth;
 
     @Override
@@ -29,6 +30,7 @@ public class RestorePasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restore_password);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+
         mUserEmailEditText = findViewById(R.id.restore_user_email_edit_text);
 
         mArrowBackImageView = findViewById(R.id.arrow_back_image_view);
@@ -49,6 +51,8 @@ public class RestorePasswordActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), R.string.incorrect_email, Toast.LENGTH_LONG)
                             .show();
                 } else {
+                    showProgressDialog();
+
                     String userEmail = mUserEmailEditText.getText().toString();
 
                     mFirebaseAuth.sendPasswordResetEmail(userEmail)
@@ -66,11 +70,21 @@ public class RestorePasswordActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), R.string.incorrect_email, Toast.LENGTH_LONG)
                                                 .show();
                                     }
+                                    mProgressDialog.dismiss();
                                 }
                             });
                 }
             }
         });
+    }
+
+    private void showProgressDialog() {
+        mProgressDialog = new ProgressDialog(RestorePasswordActivity.this);
+        mProgressDialog.setTitle(R.string.restore_password_button_text);
+        mProgressDialog.setMessage(getResources().getString(R.string.wait_text));
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
     }
 
     @Override

@@ -24,9 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mUserPasswordEditText;
     private Button mSignInButton;
     private TextView mForgotPasswordTextView;
-
     private ProgressDialog mProgressDialog;
-
     private FirebaseAuth mFirebaseAuth;
 
     @Override
