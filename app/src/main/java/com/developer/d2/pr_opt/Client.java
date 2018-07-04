@@ -1,59 +1,59 @@
 package com.developer.d2.pr_opt;
 
 public class Client {
-    private String mName;
-    private String mSurName;
-    private String mLastName;
-    private String mPhone;
-    private String mDiscountCard;
-    private String mDateOfAdmission;
-    private String mDepartamentNumber;
-    private String mManager;
-    private String mTypeEyepiece;
-    private String mDRR;
-    private String mBrandName;
-    private String mModelName;
-    private String mTemplate;
-    private String mPriceFrame;
-    private String mDiscountFrame;
-    private String mPriceLenses;
-    private String mDiscountLenses;
-    private String mPriceWork;
-    private String mDiscountWork;
-    private String mTotalPrice;
-    private String mOdSphere;
-    private String mOdCylinder;
-    private String mOdAxis;
-    private String mOdAdd;
-    private String mOdDeg;
-    private String mOdLens;
-    private String mOdIndex;
-    private String mOdCoating;
-    private String mOdPrice;
-    private String mOsSphere;
-    private String mOsCylinder;
-    private String mOsAxis;
-    private String mOsAdd;
-    private String mOsDeg;
-    private String mOsLens;
-    private String mOsIndex;
-    private String mOsCoating;
-    private String mOsPrice;
-    private String mEdited;
+    String mName;
+    String mSurName;
+    String mLastName;
+    String mPhone;
+    String mDiscountCard;
+    String mDateOfAdmission;
+    String mDepartamentNumber;
+    String mManager;
+    String mTypeEyepiece;
+    String mDRR;
+    String mBrandName;
+    String mModelName;
+    String mTemplate;
+    String mPriceFrame;
+    String mDiscountFrame;
+    String mPriceLenses;
+    String mDiscountLenses;
+    String mPriceWork;
+    String mDiscountWork;
+    String mTotalPrice;
+    String mOdSphere;
+    String mOdCylinder;
+    String mOdAxis;
+    String mOdAdd;
+    String mOdDeg;
+    String mOdLens;
+    String mOdIndex;
+    String mOdCoating;
+    String mOdPrice;
+    String mOsSphere;
+    String mOsCylinder;
+    String mOsAxis;
+    String mOsAdd;
+    String mOsDeg;
+    String mOsLens;
+    String mOsIndex;
+    String mOsCoating;
+    String mOsPrice;
+    String mEdited;
 
-    public Client() {
+    Client() {
 
     }
 
     public Client(String name, String surName, String lastName, String phone, String discountCard,
-                  String dateOfAdmission, String departamentNumber, String manager,
-                  String typeEyepiece, String DRR, String brandName, String modelName,
-                  String template, String priceFrame, String discountFrame, String priceLenses,
-                  String discountLenses, String priceWork, String discountWork, String totalPrice,
-                  String odSphere, String odCylinder, String odAxis, String odAdd, String odDeg,
-                  String odLens, String odIndex, String odCoating, String odPrice, String osSphere,
-                  String osCylinder, String osAxis, String osAdd, String osDeg, String osLens,
-                  String osIndex, String osCoating, String osPrice, String edited) {
+                  String dateOfAdmission, String departamentNumber, String manager, String typeEyepiece,
+                  String DRR, String brandName, String modelName, String template, String priceFrame,
+                  String discountFrame, String priceLenses, String discountLenses, String priceWork,
+                  String discountWork, String totalPrice, String odSphere, String odCylinder,
+                  String odAxis, String odAdd, String odDeg, String odLens, String odIndex,
+                  String odCoating, String odPrice, String osSphere, String osCylinder,
+                  String osAxis, String osAdd, String osDeg, String osLens, String osIndex,
+                  String osCoating, String osPrice, String edited) {
         mName = name;
         mSurName = surName;
         mLastName = lastName;

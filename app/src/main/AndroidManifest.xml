@@ -21,8 +21,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RestorePasswordActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="" />
+        <activity android:name=".RestorePasswordActivity" />
+        <activity android:name=".ClientInfoActivity" />
+        <activity android:name=".AddNewClientActivity"></activity>
     </application>
 
 </manifest>

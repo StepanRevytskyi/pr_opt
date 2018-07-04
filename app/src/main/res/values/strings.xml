@@ -15,4 +15,6 @@
     <string name="incorrect_email">Будь ласка, введіть правильну адресу електронної пошти</string>
     <string name="check_email">Будь ласка, перевірте вашу електронну пошту</string>
     <string name="arrow_back_desc">back</string>
+    <string name="search_text">Пошук</string>
+    <string name="sign_up_text">Вийти</string>
 </resources>
