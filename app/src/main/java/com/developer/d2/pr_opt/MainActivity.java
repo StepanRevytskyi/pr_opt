@@ -1,12 +1,15 @@
 package com.developer.d2.pr_opt;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,7 +30,7 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private android.support.v7.widget.Toolbar mToolbar;
+    private Toolbar mToolbar;
     private MaterialSearchView mSearchView;
     private EditText mSearchEditText;
     private RecyclerView mRecyclerView;
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference("client");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference(Common.NAME_DATABASE);
         mDatabaseReference.keepSynced(true);
 
         mToolbar = findViewById(R.id.toolbar);
@@ -72,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
+//TODO: написати добавлення нового клієнта
         mFloatingActionButton = findViewById(R.id.floatingActionButton);
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,14 +96,32 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Client, ClientViewHolder>(mFirebaseRecyclerOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull final ClientViewHolder holder, int position, @NonNull final Client model) {
+            protected void onBindViewHolder(@NonNull final ClientViewHolder holder, final int position, @NonNull final Client model) {
                 holder.setInfo(model.getSurName(), model.getName(), model.getTypeEyepiece());
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, ClientInfoActivity.class);
-                        Common.selectClient = model;
-                        startActivity(intent);
+                        if (model.getEdited().equals("false")) {
+                            Intent intent = new Intent(MainActivity.this, ClientInfoActivity.class);
+                            Common.selectClient = model;
+                            Common.key = mFirebaseRecyclerAdapter.getRef(position).getKey();
+                            mDatabaseReference.child(Common.key).child("mEdited").setValue("true");
+                            startActivity(intent);
+                        } else {
+                            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder
+                                    .setTitle(R.string.error_text)
+                                    .setMessage(R.string.error_message)
+                                    .setCancelable(false)
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                            AlertDialog alertDialog = builder.create();
+                            alertDialog.show();
+                        }
                     }
                 });
             }

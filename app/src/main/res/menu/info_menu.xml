@@ -2,19 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".ClientInfoActivity">
 
     <item
-        android:id="@+id/sign_out"
+        android:id="@+id/edit_client"
         android:orderInCategory="100"
-        android:title="@string/sign_up_text"
+        android:title="@string/edit_text"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_action_action_search"
+        android:id="@+id/delete_client"
         android:orderInCategory="200"
-        android:title="@string/abc_search_hint"
-        app:showAsAction="always" />
+        android:title="@string/delete_text"
+        app:showAsAction="never" />
 
 </menu>

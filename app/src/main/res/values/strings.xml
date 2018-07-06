@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">pr_opt</string>
+    <string name="company_name">ПРИМА оптика</string>
     <string name="email_text">Пошта</string>
     <string name="example_email_text">example@gmail.com</string>
     <string name="password_text">Пароль</string>
     <string name="example_password_text">password</string>
     <string name="forgot_password_text">Забули пароль?</string>
     <string name="sign_in_text">Увійти</string>
+    <string name="sign_up_text">Вийти</string>
     <string name="logo_text">logo</string>
-    <string name="company_name">ПРИМА оптика</string>
     <string name="incorrect_user_information">Будь ласка, перевірте правильну адресу електронної пошти або пароль</string>
     <string name="wait_text">Будь ласка, зачекайте</string>
     <string name="auth_failed">Не вдалося ввійти, перевірте дані або підключення до Інтернету</string>
@@ -16,5 +17,51 @@
     <string name="check_email">Будь ласка, перевірте вашу електронну пошту</string>
     <string name="arrow_back_desc">back</string>
     <string name="search_text">Пошук</string>
-    <string name="sign_up_text">Вийти</string>
+    <string name="error_text">Помилка</string>
+    <string name="error_message">Дана інформація знаходиться на редагуванні або переглядається іншою людиною</string>
+
+
+
+    <!--опис параметрів клієнта-->
+    <string name="client_name">ПІБ</string>
+    <string name="Phone">Телефон</string>
+    <string name="DiscountСard">Дисконтна картка</string>
+    <string name="DepartamentNumber">Номер відділення</string>
+    <string name="DateOfAdmission">Дата прийому</string>
+    <string name="TypeEyepiece">Тип очків</string>
+    <string name="DRR">DRR</string>
+    <string name="BrandName">Бренд</string>
+    <string name="ModelName">Модель</string>
+    <string name="Template">Шаблон</string>
+    <string name="PriceFrame">Ціна оправи</string>
+    <string name="DiscountFrame">Скидка на оправу(%)</string>
+    <string name="PriceLenses">Ціна лінз</string>
+    <string name="DiscountLenses">Скидка на лінзи(%)</string>
+    <string name="PriceWork">Ціна роботи</string>
+    <string name="DiscountWork">Скидка на роботу(%)</string>
+    <string name="TotalPrice">Загальна сумма</string>
+
+    <string name="OdSphere">OD сфера</string>
+    <string name="OdCylinder">OD циліндр</string>
+    <string name="OdAxis">OD ось</string>
+    <string name="OdAdd">OD Add</string>
+    <string name="OdDeg">OD Deg</string>
+    <string name="OdLens">OD лінза</string>
+    <string name="OdIndex">OD index</string>
+    <string name="OdCoating">OD покриття</string>
+    <string name="OdPrice">OD ціна</string>
+
+    <string name="OsSphere">OS сфера</string>
+    <string name="OsCylinder">OS циліндр</string>
+    <string name="OsAxis">OS ось</string>
+    <string name="OsAdd">OS Add</string>
+    <string name="OsDeg">OS Deg</string>
+    <string name="OsLens">OS лінза</string>
+    <string name="OsIndex">OS index</string>
+    <string name="OsCoating">OS покриття</string>
+    <string name="OsPrice">OS ціна</string>
+    <string name="name_manager">Менеджер</string>
+    <string name="edit_text">Редагувати</string>
+    <string name="delete_text">Видалити</string>
+
 </resources>
