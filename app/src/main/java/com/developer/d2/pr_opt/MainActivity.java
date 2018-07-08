@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-//TODO: написати добавлення нового клієнта
+
         mFloatingActionButton = findViewById(R.id.floatingActionButton);
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override

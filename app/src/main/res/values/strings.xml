@@ -18,9 +18,10 @@
     <string name="arrow_back_desc">back</string>
     <string name="search_text">Пошук</string>
     <string name="error_text">Помилка</string>
-    <string name="error_message">Дана інформація знаходиться на редагуванні або переглядається іншою людиною</string>
-
-
+    <string name="error_message">Дана інформація знаходиться на редагуванні або переглядається іншим менеджером</string>
+    <string name="delete_message_text">Ви справді хочете видалити даного клієнта? Після видалення всі дані будуть втрачені</string>
+    <string name="yes">Так</string>
+    <string name="cancel">Скасувати</string>
 
     <!--опис параметрів клієнта-->
     <string name="client_name">ПІБ</string>

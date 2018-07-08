@@ -1,6 +1,8 @@
 package com.developer.d2.pr_opt;
 
+import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -34,6 +36,8 @@ public class ClientInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_info);
 
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference(Common.NAME_DATABASE);
+
         setClientInfo();
 
         mToolbar = findViewById(R.id.info_toolbar);
@@ -45,7 +49,6 @@ public class ClientInfoActivity extends AppCompatActivity {
         mListView = findViewById(R.id.info_list_view);
         CustomAdapter customAdapter = new CustomAdapter();
         mListView.setAdapter(customAdapter);
-
     }
 
     private class CustomAdapter extends BaseAdapter {
@@ -227,12 +230,14 @@ public class ClientInfoActivity extends AppCompatActivity {
         return true;
     }
 
+    //TODO: доробити редагування клієнтів
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.edit_client:
                 return true;
             case R.id.delete_client:
+                deleteClient();
                 return true;
             case android.R.id.home:
                 onBackPressed();
@@ -241,9 +246,33 @@ public class ClientInfoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void deleteClient() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ClientInfoActivity.this);
+        builder
+                .setTitle(R.string.delete_text)
+                .setMessage(R.string.delete_message_text)
+                .setCancelable(false)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mDatabaseReference.child(Common.key).removeValue();
+                        dialog.dismiss();
+                        ClientInfoActivity.this.finish();
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     @Override
     public void onBackPressed() {
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference(Common.NAME_DATABASE);
         mDatabaseReference.child(Common.key).child("mEdited").setValue("false");
         this.finish();
     }
