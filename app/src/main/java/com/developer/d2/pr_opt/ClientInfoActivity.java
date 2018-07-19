@@ -1,6 +1,7 @@
 package com.developer.d2.pr_opt;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -22,14 +23,13 @@ import java.util.ArrayList;
 
 public class ClientInfoActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
-    private ListView mListView;
-
     private DatabaseReference mDatabaseReference;
 
     public ArrayList<String> clientInfo = new ArrayList<>();
     public ArrayList<String> clientInfoDescription = new ArrayList<>();
     public ArrayList<Drawable> clientInfoIcon = new ArrayList<>();
+
+    public boolean isIntent = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +40,15 @@ public class ClientInfoActivity extends AppCompatActivity {
 
         setClientInfo();
 
-        mToolbar = findViewById(R.id.info_toolbar);
-        setSupportActionBar(mToolbar);
+        Toolbar toolbar = findViewById(R.id.info_toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setElevation(Common.TOOLBAR_ELEVATION);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mListView = findViewById(R.id.info_list_view);
+        ListView listView = findViewById(R.id.info_list_view);
         CustomAdapter customAdapter = new CustomAdapter();
-        mListView.setAdapter(customAdapter);
+        listView.setAdapter(customAdapter);
     }
 
     private class CustomAdapter extends BaseAdapter {
@@ -109,7 +109,7 @@ public class ClientInfoActivity extends AppCompatActivity {
         clientInfoDescription.add(getResources().getString(R.string.TypeEyepiece));
         clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
 
-        clientInfo.add(Common.selectClient.getDRR());
+        clientInfo.add(Common.selectClient.getDrr());
         clientInfoDescription.add(getResources().getString(R.string.DRR));
         clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
 
@@ -123,34 +123,6 @@ public class ClientInfoActivity extends AppCompatActivity {
 
         clientInfo.add(Common.selectClient.getTemplate());
         clientInfoDescription.add(getResources().getString(R.string.Template));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getPriceFrame());
-        clientInfoDescription.add(getResources().getString(R.string.PriceFrame));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getDiscountFrame());
-        clientInfoDescription.add(getResources().getString(R.string.DiscountFrame));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getPriceLenses());
-        clientInfoDescription.add(getResources().getString(R.string.PriceLenses));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getDiscountLenses());
-        clientInfoDescription.add(getResources().getString(R.string.DiscountLenses));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getPriceWork());
-        clientInfoDescription.add(getResources().getString(R.string.PriceWork));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getDiscountWork());
-        clientInfoDescription.add(getResources().getString(R.string.DiscountWork));
-        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
-
-        clientInfo.add(Common.selectClient.getTotalPrice());
-        clientInfoDescription.add(getResources().getString(R.string.TotalPrice));
         clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
 
 //OD
@@ -219,6 +191,34 @@ public class ClientInfoActivity extends AppCompatActivity {
         clientInfoDescription.add(getResources().getString(R.string.OsPrice));
         clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
 
+        clientInfo.add(Common.selectClient.getPriceFrame());
+        clientInfoDescription.add(getResources().getString(R.string.PriceFrame));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getDiscountFrame());
+        clientInfoDescription.add(getResources().getString(R.string.DiscountFrame));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getPriceLenses());
+        clientInfoDescription.add(getResources().getString(R.string.PriceLenses));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getDiscountLenses());
+        clientInfoDescription.add(getResources().getString(R.string.DiscountLenses));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getPriceWork());
+        clientInfoDescription.add(getResources().getString(R.string.PriceWork));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getDiscountWork());
+        clientInfoDescription.add(getResources().getString(R.string.DiscountWork));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
+        clientInfo.add(Common.selectClient.getTotalPrice());
+        clientInfoDescription.add(getResources().getString(R.string.TotalPrice));
+        clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
+
         clientInfo.add(Common.selectClient.getManager());
         clientInfoDescription.add(getResources().getString(R.string.name_manager));
         clientInfoIcon.add(getResources().getDrawable(R.drawable.ic_default_image_view_28dp));
@@ -230,13 +230,17 @@ public class ClientInfoActivity extends AppCompatActivity {
         return true;
     }
 
-    //TODO: доробити редагування клієнтів
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.edit_client:
+                Intent intent = new Intent(ClientInfoActivity.this, UpdateClientActivity.class);
+                isIntent = true;
+                startActivity(intent);
+                ClientInfoActivity.this.finish();
                 return true;
             case R.id.delete_client:
+                isIntent = true;
                 deleteClient();
                 return true;
             case android.R.id.home:
@@ -272,8 +276,17 @@ public class ClientInfoActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        if (!isIntent) {
+            mDatabaseReference.child(Common.key).child("edited").setValue("false");
+        }
+        ClientInfoActivity.this.finish();
+    }
+
+    @Override
     public void onBackPressed() {
-        mDatabaseReference.child(Common.key).child("mEdited").setValue("false");
-        this.finish();
+        mDatabaseReference.child(Common.key).child("edited").setValue("false");
+        ClientInfoActivity.this.finish();
     }
 }

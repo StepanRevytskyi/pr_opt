@@ -1,7 +1,10 @@
 package com.developer.d2.pr_opt;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -19,6 +22,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -30,82 +34,104 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
-    private MaterialSearchView mSearchView;
-    private EditText mSearchEditText;
-    private RecyclerView mRecyclerView;
-    private FloatingActionButton mFloatingActionButton;
+    private MaterialSearchView searchView;
+    private EditText searchEditText;
+    private RecyclerView recyclerView;
 
-    private DatabaseReference mDatabaseReference;
-    private Query mFirebaseSearchQuery;
-    private FirebaseRecyclerAdapter<Client, ClientViewHolder> mFirebaseRecyclerAdapter;
-    private FirebaseRecyclerOptions<Client> mFirebaseRecyclerOptions;
+    private DatabaseReference databaseReference;
+    private FirebaseRecyclerAdapter<Client, ClientViewHolder> firebaseRecyclerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference(Common.NAME_DATABASE);
-        mDatabaseReference.keepSynced(true);
+        databaseReference = FirebaseDatabase.getInstance().getReference(Common.NAME_DATABASE);
+        databaseReference.keepSynced(true);
 
-        mToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        mRecyclerView = findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mSearchView = findViewById(R.id.search_view);
-        mSearchView.setVoiceSearch(false);
+        searchView = findViewById(R.id.search_view);
+        searchView.setVoiceSearch(false);
 
-        if (Common.searchText.length() > 0) {
-            firebaseSearch(Common.searchText);
+        if (Common.searchText.length() > 0 && haveNetworkConnection()) {
+            searchInFirebase(Common.searchText);
         }
 
-        mSearchEditText = findViewById(R.id.searchTextView);
-        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        searchEditText = findViewById(R.id.searchTextView);
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH && mSearchEditText.getText().toString().length() > 0) {
-                    Common.searchText = mSearchEditText.getText().toString();
-                    firebaseSearch(mSearchEditText.getText().toString());
-                    return true;
+                if (actionId == EditorInfo.IME_ACTION_SEARCH
+                        && searchEditText.getText().toString().length() > 0
+                        && haveNetworkConnection()) {
+                    Common.searchText = searchEditText.getText().toString();
+                    searchInFirebase(searchEditText.getText().toString());
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.internet_connection_failed, Toast.LENGTH_LONG)
+                            .show();
                 }
-                return false;
+                return true;
             }
         });
 
-        mFloatingActionButton = findViewById(R.id.floatingActionButton);
-        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddNewClientActivity.class);
+                Intent intent = new Intent(MainActivity.this, NewClientActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    private void firebaseSearch(String searchText) {
+    private boolean haveNetworkConnection() {
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
 
-        mFirebaseSearchQuery = mDatabaseReference.orderByChild("mSurName").startAt(searchText).endAt(searchText + "\uf8ff");
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] networkInfos = connectivityManager.getAllNetworkInfo();
+        for (NetworkInfo ni : networkInfos) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveConnectedWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveConnectedMobile = true;
+        }
+        return haveConnectedWifi || haveConnectedMobile;
+    }
 
-        mFirebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<Client>()
-                .setQuery(mFirebaseSearchQuery, Client.class)
+    private void searchInFirebase(String searchText) {
+        Query firebaseSearchQuery;
+
+        if (searchText.matches("[0-9]+") || ((searchText.contains("+") && searchText.matches("[0-9]+")))) {
+            firebaseSearchQuery = databaseReference.orderByChild("phone").startAt(searchText).endAt(searchText + "\uf8ff");
+        } else {
+            firebaseSearchQuery = databaseReference.orderByChild("surName").startAt(searchText).endAt(searchText + "\uf8ff");
+        }
+
+        FirebaseRecyclerOptions<Client> firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<Client>()
+                .setQuery(firebaseSearchQuery, Client.class)
                 .build();
 
-        mFirebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Client, ClientViewHolder>(mFirebaseRecyclerOptions) {
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Client, ClientViewHolder>(firebaseRecyclerOptions) {
             @Override
             protected void onBindViewHolder(@NonNull final ClientViewHolder holder, final int position, @NonNull final Client model) {
                 holder.setInfo(model.getSurName(), model.getName(), model.getTypeEyepiece());
-                holder.mView.setOnClickListener(new View.OnClickListener() {
+                holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (model.getEdited().equals("false")) {
                             Intent intent = new Intent(MainActivity.this, ClientInfoActivity.class);
                             Common.selectClient = model;
-                            Common.key = mFirebaseRecyclerAdapter.getRef(position).getKey();
-                            mDatabaseReference.child(Common.key).child("mEdited").setValue("true");
+                            Common.key = firebaseRecyclerAdapter.getRef(position).getKey();
+                            databaseReference.child(Common.key).child("edited").setValue("true");
                             startActivity(intent);
                         } else {
                             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -135,22 +161,22 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        mFirebaseRecyclerAdapter.startListening();
-        mRecyclerView.setAdapter(mFirebaseRecyclerAdapter);
+        firebaseRecyclerAdapter.startListening();
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     public class ClientViewHolder extends RecyclerView.ViewHolder {
-        View mView;
+        View view;
 
         ClientViewHolder(View itemView) {
             super(itemView);
-            mView = itemView;
+            view = itemView;
         }
 
         public void setInfo(String surname, String name, String typeEyepiece) {
-            TextView surnameTextView = mView.findViewById(R.id.surname_text_view);
-            TextView nameTextView = mView.findViewById(R.id.name_text_view);
-            TextView typeEyepieceTextView = mView.findViewById(R.id.type_eyepiece_text_view);
+            TextView surnameTextView = view.findViewById(R.id.surname_text_view);
+            TextView nameTextView = view.findViewById(R.id.name_text_view);
+            TextView typeEyepieceTextView = view.findViewById(R.id.type_eyepiece_text_view);
 
             surnameTextView.setText(surname);
             nameTextView.setText(name);
@@ -161,15 +187,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (mFirebaseRecyclerAdapter != null) {
-            mFirebaseRecyclerAdapter.startListening();
+        if (firebaseRecyclerAdapter != null) {
+            firebaseRecyclerAdapter.startListening();
         }
     }
 
     @Override
     protected void onStop() {
-        if (mFirebaseRecyclerAdapter != null) {
-            mFirebaseRecyclerAdapter.stopListening();
+        if (firebaseRecyclerAdapter != null) {
+            firebaseRecyclerAdapter.stopListening();
         }
         super.onStop();
     }
@@ -177,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (mFirebaseRecyclerAdapter != null) {
-            mFirebaseRecyclerAdapter.startListening();
+        if (firebaseRecyclerAdapter != null) {
+            firebaseRecyclerAdapter.startListening();
         }
     }
 
@@ -187,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu, menu);
 
         MenuItem item = menu.findItem(R.id.action_search);
-        mSearchView.setMenuItem(item);
+        searchView.setMenuItem(item);
 
         return true;
     }
@@ -210,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mSearchView.isSearchOpen()) {
-            mSearchView.closeSearch();
+        if (searchView.isSearchOpen()) {
+            searchView.closeSearch();
         } else {
             super.onBackPressed();
         }

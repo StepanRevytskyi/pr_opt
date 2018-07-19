@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".UpdateClientActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/update_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/update_scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/update_surname"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/surname_text"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/update_surname_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/surname_text"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_surname"
+                app:layout_constraintStart_toStartOf="@+id/update_surname" />
+
+            <View
+                android:id="@+id/uview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_surname"
+                app:layout_constraintStart_toStartOf="@+id/update_surname"
+                app:layout_constraintTop_toBottomOf="@+id/update_surname" />
+
+            <EditText
+                android:id="@+id/update_name"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/name_text"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/update_surname" />
+
+            <TextView
+                android:id="@+id/update_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_text"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_name"
+                app:layout_constraintStart_toStartOf="@+id/update_name" />
+
+            <View
+                android:id="@+id/nview212"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_name"
+                app:layout_constraintStart_toStartOf="@+id/update_name"
+                app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+            <EditText
+                android:id="@+id/update_lastname"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/lastname"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nview212" />
+
+            <TextView
+                android:id="@+id/update_lastname_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lastname"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_lastname"
+                app:layout_constraintStart_toStartOf="@+id/update_lastname" />
+
+            <View
+                android:id="@+id/nview412"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_lastname"
+                app:layout_constraintStart_toStartOf="@+id/update_lastname"
+                app:layout_constraintTop_toBottomOf="@+id/update_lastname" />
+
+            <EditText
+                android:id="@+id/update_phone"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/Phone"
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nview412" />
+
+            <TextView
+                android:id="@+id/textView212"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Phone"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_phone"
+                app:layout_constraintStart_toStartOf="@+id/update_phone" />
+
+            <View
+                android:id="@+id/view512"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_phone"
+                app:layout_constraintStart_toStartOf="@+id/update_phone"
+                app:layout_constraintTop_toBottomOf="@+id/update_phone" />
+
+            <EditText
+                android:id="@+id/update_discount_card"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/DiscountСard"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view512" />
+
+            <TextView
+                android:id="@+id/textView312"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/DiscountСard"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_discount_card"
+                app:layout_constraintStart_toStartOf="@+id/update_discount_card" />
+
+            <View
+                android:id="@+id/view612"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_discount_card"
+                app:layout_constraintStart_toStartOf="@+id/update_discount_card"
+                app:layout_constraintTop_toBottomOf="@+id/update_discount_card" />
+
+            <EditText
+                android:id="@+id/update_data_of_admission"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/DateOfAdmission"
+                android:inputType="date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view612" />
+
+            <TextView
+                android:id="@+id/textView412"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/DateOfAdmission"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_data_of_admission"
+                app:layout_constraintStart_toStartOf="@+id/update_data_of_admission" />
+
+            <View
+                android:id="@+id/view2121"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_data_of_admission"
+                app:layout_constraintStart_toStartOf="@+id/update_data_of_admission"
+                app:layout_constraintTop_toBottomOf="@+id/update_data_of_admission" />
+
+            <EditText
+                android:id="@+id/update_departament_number"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/DepartamentNumber"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2121" />
+
+            <TextView
+                android:id="@+id/textView5123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/DepartamentNumber"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_departament_number"
+                app:layout_constraintStart_toStartOf="@+id/update_departament_number" />
+
+            <View
+                android:id="@+id/view777"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_departament_number"
+                app:layout_constraintStart_toStartOf="@+id/update_departament_number"
+                app:layout_constraintTop_toBottomOf="@+id/update_departament_number" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/update_type_eye_spinner"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:entries="@array/type_eyepiece"
+                android:spinnerMode="dropdown"
+                android:theme="@style/Spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view777" />
+
+            <TextView
+                android:id="@+id/textView6123123123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TypeEyepiece"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_type_eye_spinner"
+                app:layout_constraintStart_toStartOf="@+id/update_type_eye_spinner" />
+
+            <View
+                android:id="@+id/view888"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_type_eye_spinner"
+                app:layout_constraintStart_toStartOf="@+id/update_type_eye_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/update_type_eye_spinner" />
+
+            <EditText
+                android:id="@+id/update_drr"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/DRR"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view888" />
+
+            <TextView
+                android:id="@+id/textView71187"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/DRR"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_drr"
+                app:layout_constraintStart_toStartOf="@+id/update_drr" />
+
+            <View
+                android:id="@+id/view91234"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_drr"
+                app:layout_constraintStart_toStartOf="@+id/update_drr"
+                app:layout_constraintTop_toBottomOf="@+id/update_drr" />
+
+            <EditText
+                android:id="@+id/update_brand"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/BrandName"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view91234" />
+
+            <TextView
+                android:id="@+id/textView8053"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BrandName"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_brand"
+                app:layout_constraintStart_toStartOf="@+id/update_brand" />
+
+            <View
+                android:id="@+id/view10qwe"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_brand"
+                app:layout_constraintStart_toStartOf="@+id/update_brand"
+                app:layout_constraintTop_toBottomOf="@+id/update_brand" />
+
+            <EditText
+                android:id="@+id/update_model"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/ModelName"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view10qwe" />
+
+            <TextView
+                android:id="@+id/textView9qw2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ModelName"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_model"
+                app:layout_constraintStart_toStartOf="@+id/update_model" />
+
+            <View
+                android:id="@+id/view11qwe"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_model"
+                app:layout_constraintStart_toStartOf="@+id/update_model"
+                app:layout_constraintTop_toBottomOf="@+id/update_model" />
+
+            <EditText
+                android:id="@+id/update_template"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/Template"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view11qwe" />
+
+            <TextView
+                android:id="@+id/textView10fds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Template"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_template"
+                app:layout_constraintStart_toStartOf="@+id/update_template" />
+
+            <View
+                android:id="@+id/view12q1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_template"
+                app:layout_constraintStart_toStartOf="@+id/update_template"
+                app:layout_constraintTop_toBottomOf="@+id/update_template" />
+
+            <EditText
+                android:id="@+id/update_od_sphere"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdSphere"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view12q1" />
+
+            <TextView
+                android:id="@+id/textViewq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdSphere"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_sphere"
+                app:layout_constraintStart_toStartOf="@+id/update_od_sphere" />
+
+            <View
+                android:id="@+id/view3qw1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_sphere"
+                app:layout_constraintStart_toStartOf="@+id/update_od_sphere"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_sphere" />
+
+            <EditText
+                android:id="@+id/update_od_cylinder"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdCylinder"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3qw1" />
+
+            <TextView
+                android:id="@+id/textView11qw2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdCylinder"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_cylinder"
+                app:layout_constraintStart_toStartOf="@+id/update_od_cylinder" />
+
+            <View
+                android:id="@+id/view4qa2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_cylinder"
+                app:layout_constraintStart_toStartOf="@+id/update_od_cylinder"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_cylinder" />
+
+            <EditText
+                android:id="@+id/update_od_axis"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdAxis"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4qa2" />
+
+            <TextView
+                android:id="@+id/textView12qa1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdAxis"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_axis"
+                app:layout_constraintStart_toStartOf="@+id/update_od_axis" />
+
+            <View
+                android:id="@+id/view13ew1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_axis"
+                app:layout_constraintStart_toStartOf="@+id/update_od_axis"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_axis" />
+
+            <EditText
+                android:id="@+id/update_od_add"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdAdd"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view13ew1" />
+
+            <TextView
+                android:id="@+id/textView13ew2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdAdd"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_add"
+                app:layout_constraintStart_toStartOf="@+id/update_od_add" />
+
+            <View
+                android:id="@+id/view14ewq"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_add"
+                app:layout_constraintStart_toStartOf="@+id/update_od_add"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_add" />
+
+            <EditText
+                android:id="@+id/update_od_deg"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdDeg"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view14ewq" />
+
+            <TextView
+                android:id="@+id/textView14312"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdDeg"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_deg"
+                app:layout_constraintStart_toStartOf="@+id/update_od_deg" />
+
+            <View
+                android:id="@+id/view15ew3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_deg"
+                app:layout_constraintStart_toStartOf="@+id/update_od_deg"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_deg" />
+
+            <EditText
+                android:id="@+id/update_od_lens"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdLens"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view15ew3" />
+
+            <TextView
+                android:id="@+id/textView15tre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdLens"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_lens"
+                app:layout_constraintStart_toStartOf="@+id/update_od_lens" />
+
+            <View
+                android:id="@+id/view16wq87"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_lens"
+                app:layout_constraintStart_toStartOf="@+id/update_od_lens"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_lens" />
+
+            <EditText
+                android:id="@+id/update_od_index"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdIndex"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view16wq87" />
+
+            <TextView
+                android:id="@+id/textView16fsdfa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdIndex"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_index"
+                app:layout_constraintStart_toStartOf="@+id/update_od_index" />
+
+            <View
+                android:id="@+id/view1tr7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_index"
+                app:layout_constraintStart_toStartOf="@+id/update_od_index"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_index" />
+
+            <EditText
+                android:id="@+id/update_od_coating"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OdCoating"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1tr7" />
+
+            <TextView
+                android:id="@+id/textView17dwwq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdCoating"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_coating"
+                app:layout_constraintStart_toStartOf="@+id/update_od_coating" />
+
+            <View
+                android:id="@+id/view18lk"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_coating"
+                app:layout_constraintStart_toStartOf="@+id/update_od_coating"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_coating" />
+
+            <EditText
+                android:id="@+id/update_od_price"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/OdPrice"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view18lk" />
+
+            <TextView
+                android:id="@+id/textView18fde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OdPrice"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_od_price"
+                app:layout_constraintStart_toStartOf="@+id/update_od_price" />
+
+            <View
+                android:id="@+id/view1qw4f9"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_od_price"
+                app:layout_constraintStart_toStartOf="@+id/update_od_price"
+                app:layout_constraintTop_toBottomOf="@+id/update_od_price" />
+
+            <EditText
+                android:id="@+id/update_os_sphere"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsSphere"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1qw4f9" />
+
+            <TextView
+                android:id="@+id/textView196gd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsSphere"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_sphere"
+                app:layout_constraintStart_toStartOf="@+id/update_os_sphere" />
+
+            <View
+                android:id="@+id/qwview20"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_sphere"
+                app:layout_constraintStart_toStartOf="@+id/update_os_sphere"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_sphere" />
+
+            <EditText
+                android:id="@+id/update_os_cylinder"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsCylinder"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/qwview20" />
+
+            <TextView
+                android:id="@+id/textView2dads20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsCylinder"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_cylinder"
+                app:layout_constraintStart_toStartOf="@+id/update_os_cylinder" />
+
+            <View
+                android:id="@+id/view217ht"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_cylinder"
+                app:layout_constraintStart_toStartOf="@+id/update_os_cylinder"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_cylinder" />
+
+            <EditText
+                android:id="@+id/update_os_axis"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsAxis"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view217ht" />
+
+            <TextView
+                android:id="@+id/textView215gd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsAxis"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_axis"
+                app:layout_constraintStart_toStartOf="@+id/update_os_axis" />
+
+            <View
+                android:id="@+id/view22tr5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_axis"
+                app:layout_constraintStart_toStartOf="@+id/update_os_axis"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_axis" />
+
+            <EditText
+                android:id="@+id/update_os_add"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsAdd"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view22tr5" />
+
+            <TextView
+                android:id="@+id/textView22gfd3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsAdd"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_add"
+                app:layout_constraintStart_toStartOf="@+id/update_os_add" />
+
+            <View
+                android:id="@+id/view23trd"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_add"
+                app:layout_constraintStart_toStartOf="@+id/update_os_add"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_add" />
+
+            <EditText
+                android:id="@+id/update_os_deg"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsDeg"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view23trd" />
+
+            <TextView
+                android:id="@+id/textView23hfg5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsDeg"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_deg"
+                app:layout_constraintStart_toStartOf="@+id/update_os_deg" />
+
+            <View
+                android:id="@+id/view24rf6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_deg"
+                app:layout_constraintStart_toStartOf="@+id/update_os_deg"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_deg" />
+
+            <EditText
+                android:id="@+id/update_os_lens"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsLens"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view24rf6" />
+
+            <TextView
+                android:id="@+id/textView24fd5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsLens"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_lens"
+                app:layout_constraintStart_toStartOf="@+id/update_os_lens" />
+
+            <View
+                android:id="@+id/vie12w25"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_lens"
+                app:layout_constraintStart_toStartOf="@+id/update_os_lens"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_lens" />
+
+            <EditText
+                android:id="@+id/update_os_index"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsIndex"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vie12w25" />
+
+            <TextView
+                android:id="@+id/textVdrreiew25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsIndex"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_index"
+                app:layout_constraintStart_toStartOf="@+id/update_os_index" />
+
+            <View
+                android:id="@+id/view26dc5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_index"
+                app:layout_constraintStart_toStartOf="@+id/update_os_index"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_index" />
+
+            <EditText
+                android:id="@+id/update_os_coating"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/OsCoating"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view26dc5" />
+
+            <TextView
+                android:id="@+id/textVdsds2iew26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsCoating"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_coating"
+                app:layout_constraintStart_toStartOf="@+id/update_os_coating" />
+
+            <View
+                android:id="@+id/v23iew27"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_coating"
+                app:layout_constraintStart_toStartOf="@+id/update_os_coating"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_coating" />
+
+            <EditText
+                android:id="@+id/update_os_price"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/OsPrice"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v23iew27" />
+
+            <TextView
+                android:id="@+id/textView27dc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/OsPrice"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_os_price"
+                app:layout_constraintStart_toStartOf="@+id/update_os_price" />
+
+            <View
+                android:id="@+id/view28a3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_os_price"
+                app:layout_constraintStart_toStartOf="@+id/update_os_price"
+                app:layout_constraintTop_toBottomOf="@+id/update_os_price" />
+
+            <EditText
+                android:id="@+id/update_price_frame"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/PriceFrame"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view28a3" />
+
+            <TextView
+                android:id="@+id/edtextView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PriceFrame"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_price_frame"
+                app:layout_constraintStart_toStartOf="@+id/update_price_frame" />
+
+            <View
+                android:id="@+id/gb6view29"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_price_frame"
+                app:layout_constraintStart_toStartOf="@+id/update_price_frame"
+                app:layout_constraintTop_toBottomOf="@+id/update_price_frame" />
+
+            <EditText
+                android:id="@+id/update_price_work"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/PriceWork"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gb6view29" />
+
+            <TextView
+                android:id="@+id/textView29sd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PriceWork"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_price_work"
+                app:layout_constraintStart_toStartOf="@+id/update_price_work" />
+
+            <View
+                android:id="@+id/view301"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_price_work"
+                app:layout_constraintStart_toStartOf="@+id/update_price_work"
+                app:layout_constraintTop_toBottomOf="@+id/update_price_work" />
+
+            <EditText
+                android:id="@+id/update_discount"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/Discount"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view301" />
+
+            <TextView
+                android:id="@+id/text323View30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Discount"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_discount"
+                app:layout_constraintStart_toStartOf="@+id/update_discount" />
+
+            <View
+                android:id="@+id/view31fv"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/update_discount"
+                app:layout_constraintStart_toStartOf="@+id/update_discount"
+                app:layout_constraintTop_toBottomOf="@+id/update_discount" />
+
+            <EditText
+                android:id="@+id/update_manager"
+                style="@style/app_mobile_EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/name_manager"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view31fv" />
+
+            <TextView
+                android:id="@+id/textView31dsds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_manager"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/update_manager"
+                app:layout_constraintStart_toStartOf="@+id/update_manager" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

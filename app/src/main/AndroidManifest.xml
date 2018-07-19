@@ -3,12 +3,13 @@
     package="com.developer.d2.pr_opt">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -26,7 +27,8 @@
             android:label="" />
         <activity android:name=".RestorePasswordActivity" />
         <activity android:name=".ClientInfoActivity" />
-        <activity android:name=".AddNewClientActivity"></activity>
+        <activity android:name=".NewClientActivity" />
+        <activity android:name=".UpdateClientActivity" />
     </application>
 
 </manifest>

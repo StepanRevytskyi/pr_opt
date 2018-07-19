@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">pr_opt</string>
+    <string name="app_name">Оптика</string>
     <string name="company_name">ПРИМА оптика</string>
     <string name="email_text">Пошта</string>
     <string name="example_email_text">example@gmail.com</string>
@@ -12,6 +12,7 @@
     <string name="incorrect_user_information">Будь ласка, перевірте правильну адресу електронної пошти або пароль</string>
     <string name="wait_text">Будь ласка, зачекайте</string>
     <string name="auth_failed">Не вдалося ввійти, перевірте дані або підключення до Інтернету</string>
+    <string name="internet_connection_failed">Перевірте підключення до Інтернету</string>
     <string name="restore_password_button_text">Відновити</string>
     <string name="incorrect_email">Будь ласка, введіть правильну адресу електронної пошти</string>
     <string name="check_email">Будь ласка, перевірте вашу електронну пошту</string>
@@ -22,24 +23,25 @@
     <string name="delete_message_text">Ви справді хочете видалити даного клієнта? Після видалення всі дані будуть втрачені</string>
     <string name="yes">Так</string>
     <string name="cancel">Скасувати</string>
+    <string name="exit_message_text">Ви справді хочете вийти? Всі дані не будуть збережені</string>
 
     <!--опис параметрів клієнта-->
     <string name="client_name">ПІБ</string>
     <string name="Phone">Телефон</string>
     <string name="DiscountСard">Дисконтна картка</string>
-    <string name="DepartamentNumber">Номер відділення</string>
     <string name="DateOfAdmission">Дата прийому</string>
+    <string name="DepartamentNumber">Номер відділення</string>
     <string name="TypeEyepiece">Тип очків</string>
     <string name="DRR">DRR</string>
     <string name="BrandName">Бренд</string>
     <string name="ModelName">Модель</string>
     <string name="Template">Шаблон</string>
     <string name="PriceFrame">Ціна оправи</string>
-    <string name="DiscountFrame">Скидка на оправу(%)</string>
+    <string name="DiscountFrame">Ціна оправи зі знижкою</string>
     <string name="PriceLenses">Ціна лінз</string>
-    <string name="DiscountLenses">Скидка на лінзи(%)</string>
+    <string name="DiscountLenses">Ціна лінз зі знижкою</string>
     <string name="PriceWork">Ціна роботи</string>
-    <string name="DiscountWork">Скидка на роботу(%)</string>
+    <string name="DiscountWork">Знижка</string>
     <string name="TotalPrice">Загальна сумма</string>
 
     <string name="OdSphere">OD сфера</string>
@@ -62,7 +64,20 @@
     <string name="OsCoating">OS покриття</string>
     <string name="OsPrice">OS ціна</string>
     <string name="name_manager">Менеджер</string>
+
     <string name="edit_text">Редагувати</string>
     <string name="delete_text">Видалити</string>
+
+    <string name="surname_text">Прізвище</string>
+    <string name="name_text">Ім’я</string>
+    <string name="lastname">По батькові</string>
+    <string name="default_text" />
+    <string name="Discount">Знижка</string>
+    <string-array name="type_eyepiece">
+        <item>Для робити</item>
+        <item>Для далі</item>
+        <item>Для постійного носіння</item>
+        <item>По окулярам клієнта</item>
+    </string-array>
 
 </resources>

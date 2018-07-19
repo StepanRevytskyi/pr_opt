@@ -1,45 +1,45 @@
 package com.developer.d2.pr_opt;
 
 public class Client {
-    String mName;
-    String mSurName;
-    String mLastName;
-    String mPhone;
-    String mDiscountCard;
-    String mDateOfAdmission;
-    String mDepartamentNumber;
-    String mManager;
-    String mTypeEyepiece;
-    String mDRR;
-    String mBrandName;
-    String mModelName;
-    String mTemplate;
-    String mPriceFrame;
-    String mDiscountFrame;
-    String mPriceLenses;
-    String mDiscountLenses;
-    String mPriceWork;
-    String mDiscountWork;
-    String mTotalPrice;
-    String mOdSphere;
-    String mOdCylinder;
-    String mOdAxis;
-    String mOdAdd;
-    String mOdDeg;
-    String mOdLens;
-    String mOdIndex;
-    String mOdCoating;
-    String mOdPrice;
-    String mOsSphere;
-    String mOsCylinder;
-    String mOsAxis;
-    String mOsAdd;
-    String mOsDeg;
-    String mOsLens;
-    String mOsIndex;
-    String mOsCoating;
-    String mOsPrice;
-    String mEdited;
+    String name;
+    String surName;
+    String lastName;
+    String phone;
+    String discountCard;
+    String dateOfAdmission;
+    String departamentNumber;
+    String manager;
+    String typeEyepiece;
+    String drr;
+    String brandName;
+    String modelName;
+    String template;
+    String priceFrame;
+    String discountFrame;
+    String priceLenses;
+    String discountLenses;
+    String priceWork;
+    String discountWork;
+    String totalPrice;
+    String odSphere;
+    String odCylinder;
+    String odAxis;
+    String odAdd;
+    String odDeg;
+    String odLens;
+    String odIndex;
+    String odCoating;
+    String odPrice;
+    String osSphere;
+    String osCylinder;
+    String osAxis;
+    String osAdd;
+    String osDeg;
+    String osLens;
+    String osIndex;
+    String osCoating;
+    String osPrice;
+    String edited;
 
     Client() {
 
@@ -47,363 +47,363 @@ public class Client {
 
     public Client(String name, String surName, String lastName, String phone, String discountCard,
                   String dateOfAdmission, String departamentNumber, String manager, String typeEyepiece,
-                  String DRR, String brandName, String modelName, String template, String priceFrame,
+                  String drr, String brandName, String modelName, String template, String priceFrame,
                   String discountFrame, String priceLenses, String discountLenses, String priceWork,
                   String discountWork, String totalPrice, String odSphere, String odCylinder,
                   String odAxis, String odAdd, String odDeg, String odLens, String odIndex,
                   String odCoating, String odPrice, String osSphere, String osCylinder,
                   String osAxis, String osAdd, String osDeg, String osLens, String osIndex,
                   String osCoating, String osPrice, String edited) {
-        mName = name;
-        mSurName = surName;
-        mLastName = lastName;
-        mPhone = phone;
-        mDiscountCard = discountCard;
-        mDateOfAdmission = dateOfAdmission;
-        mDepartamentNumber = departamentNumber;
-        mManager = manager;
-        mTypeEyepiece = typeEyepiece;
-        mDRR = DRR;
-        mBrandName = brandName;
-        mModelName = modelName;
-        mTemplate = template;
-        mPriceFrame = priceFrame;
-        mDiscountFrame = discountFrame;
-        mPriceLenses = priceLenses;
-        mDiscountLenses = discountLenses;
-        mPriceWork = priceWork;
-        mDiscountWork = discountWork;
-        mTotalPrice = totalPrice;
-        mOdSphere = odSphere;
-        mOdCylinder = odCylinder;
-        mOdAxis = odAxis;
-        mOdAdd = odAdd;
-        mOdDeg = odDeg;
-        mOdLens = odLens;
-        mOdIndex = odIndex;
-        mOdCoating = odCoating;
-        mOdPrice = odPrice;
-        mOsSphere = osSphere;
-        mOsCylinder = osCylinder;
-        mOsAxis = osAxis;
-        mOsAdd = osAdd;
-        mOsDeg = osDeg;
-        mOsLens = osLens;
-        mOsIndex = osIndex;
-        mOsCoating = osCoating;
-        mOsPrice = osPrice;
-        mEdited = edited;
+        this.name = name;
+        this.surName = surName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.discountCard = discountCard;
+        this.dateOfAdmission = dateOfAdmission;
+        this.departamentNumber = departamentNumber;
+        this.manager = manager;
+        this.typeEyepiece = typeEyepiece;
+        this.drr = drr;
+        this.brandName = brandName;
+        this.modelName = modelName;
+        this.template = template;
+        this.priceFrame = priceFrame;
+        this.discountFrame = discountFrame;
+        this.priceLenses = priceLenses;
+        this.discountLenses = discountLenses;
+        this.priceWork = priceWork;
+        this.discountWork = discountWork;
+        this.totalPrice = totalPrice;
+        this.odSphere = odSphere;
+        this.odCylinder = odCylinder;
+        this.odAxis = odAxis;
+        this.odAdd = odAdd;
+        this.odDeg = odDeg;
+        this.odLens = odLens;
+        this.odIndex = odIndex;
+        this.odCoating = odCoating;
+        this.odPrice = odPrice;
+        this.osSphere = osSphere;
+        this.osCylinder = osCylinder;
+        this.osAxis = osAxis;
+        this.osAdd = osAdd;
+        this.osDeg = osDeg;
+        this.osLens = osLens;
+        this.osIndex = osIndex;
+        this.osCoating = osCoating;
+        this.osPrice = osPrice;
+        this.edited = edited;
     }
 
     public String getName() {
-        return mName;
+        return name;
     }
 
     public void setName(String name) {
-        mName = name;
+        this.name = name;
     }
 
     public String getSurName() {
-        return mSurName;
+        return surName;
     }
 
     public void setSurName(String surName) {
-        mSurName = surName;
+        this.surName = surName;
     }
 
     public String getLastName() {
-        return mLastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        mLastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getPhone() {
-        return mPhone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        mPhone = phone;
+        this.phone = phone;
     }
 
     public String getDiscountCard() {
-        return mDiscountCard;
+        return discountCard;
     }
 
     public void setDiscountCard(String discountCard) {
-        mDiscountCard = discountCard;
+        this.discountCard = discountCard;
     }
 
     public String getDateOfAdmission() {
-        return mDateOfAdmission;
+        return dateOfAdmission;
     }
 
     public void setDateOfAdmission(String dateOfAdmission) {
-        mDateOfAdmission = dateOfAdmission;
+        this.dateOfAdmission = dateOfAdmission;
     }
 
     public String getDepartamentNumber() {
-        return mDepartamentNumber;
+        return departamentNumber;
     }
 
     public void setDepartamentNumber(String departamentNumber) {
-        mDepartamentNumber = departamentNumber;
+        this.departamentNumber = departamentNumber;
     }
 
     public String getManager() {
-        return mManager;
+        return manager;
     }
 
     public void setManager(String manager) {
-        mManager = manager;
+        this.manager = manager;
     }
 
     public String getTypeEyepiece() {
-        return mTypeEyepiece;
+        return typeEyepiece;
     }
 
     public void setTypeEyepiece(String typeEyepiece) {
-        mTypeEyepiece = typeEyepiece;
+        this.typeEyepiece = typeEyepiece;
     }
 
-    public String getDRR() {
-        return mDRR;
+    public String getDrr() {
+        return drr;
     }
 
-    public void setDRR(String DRR) {
-        mDRR = DRR;
+    public void setDrr(String drr) {
+        this.drr = drr;
     }
 
     public String getBrandName() {
-        return mBrandName;
+        return brandName;
     }
 
     public void setBrandName(String brandName) {
-        mBrandName = brandName;
+        this.brandName = brandName;
     }
 
     public String getModelName() {
-        return mModelName;
+        return modelName;
     }
 
     public void setModelName(String modelName) {
-        mModelName = modelName;
+        this.modelName = modelName;
     }
 
     public String getTemplate() {
-        return mTemplate;
+        return template;
     }
 
     public void setTemplate(String template) {
-        mTemplate = template;
+        this.template = template;
     }
 
     public String getPriceFrame() {
-        return mPriceFrame;
+        return priceFrame;
     }
 
     public void setPriceFrame(String priceFrame) {
-        mPriceFrame = priceFrame;
+        this.priceFrame = priceFrame;
     }
 
     public String getDiscountFrame() {
-        return mDiscountFrame;
+        return discountFrame;
     }
 
     public void setDiscountFrame(String discountFrame) {
-        mDiscountFrame = discountFrame;
+        this.discountFrame = discountFrame;
     }
 
     public String getPriceLenses() {
-        return mPriceLenses;
+        return priceLenses;
     }
 
     public void setPriceLenses(String priceLenses) {
-        mPriceLenses = priceLenses;
+        this.priceLenses = priceLenses;
     }
 
     public String getDiscountLenses() {
-        return mDiscountLenses;
+        return discountLenses;
     }
 
     public void setDiscountLenses(String discountLenses) {
-        mDiscountLenses = discountLenses;
+        this.discountLenses = discountLenses;
     }
 
     public String getPriceWork() {
-        return mPriceWork;
+        return priceWork;
     }
 
     public void setPriceWork(String priceWork) {
-        mPriceWork = priceWork;
+        this.priceWork = priceWork;
     }
 
     public String getDiscountWork() {
-        return mDiscountWork;
+        return discountWork;
     }
 
     public void setDiscountWork(String discountWork) {
-        mDiscountWork = discountWork;
+        this.discountWork = discountWork;
     }
 
     public String getTotalPrice() {
-        return mTotalPrice;
+        return totalPrice;
     }
 
     public void setTotalPrice(String totalPrice) {
-        mTotalPrice = totalPrice;
+        this.totalPrice = totalPrice;
     }
 
     public String getOdSphere() {
-        return mOdSphere;
+        return odSphere;
     }
 
     public void setOdSphere(String odSphere) {
-        mOdSphere = odSphere;
+        this.odSphere = odSphere;
     }
 
     public String getOdCylinder() {
-        return mOdCylinder;
+        return odCylinder;
     }
 
     public void setOdCylinder(String odCylinder) {
-        mOdCylinder = odCylinder;
+        this.odCylinder = odCylinder;
     }
 
     public String getOdAxis() {
-        return mOdAxis;
+        return odAxis;
     }
 
     public void setOdAxis(String odAxis) {
-        mOdAxis = odAxis;
+        this.odAxis = odAxis;
     }
 
     public String getOdAdd() {
-        return mOdAdd;
+        return odAdd;
     }
 
     public void setOdAdd(String odAdd) {
-        mOdAdd = odAdd;
+        this.odAdd = odAdd;
     }
 
     public String getOdDeg() {
-        return mOdDeg;
+        return odDeg;
     }
 
     public void setOdDeg(String odDeg) {
-        mOdDeg = odDeg;
+        this.odDeg = odDeg;
     }
 
     public String getOdLens() {
-        return mOdLens;
+        return odLens;
     }
 
     public void setOdLens(String odLens) {
-        mOdLens = odLens;
+        this.odLens = odLens;
     }
 
     public String getOdIndex() {
-        return mOdIndex;
+        return odIndex;
     }
 
     public void setOdIndex(String odIndex) {
-        mOdIndex = odIndex;
+        this.odIndex = odIndex;
     }
 
     public String getOdCoating() {
-        return mOdCoating;
+        return odCoating;
     }
 
     public void setOdCoating(String odCoating) {
-        mOdCoating = odCoating;
+        this.odCoating = odCoating;
     }
 
     public String getOdPrice() {
-        return mOdPrice;
+        return odPrice;
     }
 
     public void setOdPrice(String odPrice) {
-        mOdPrice = odPrice;
+        this.odPrice = odPrice;
     }
 
     public String getOsSphere() {
-        return mOsSphere;
+        return osSphere;
     }
 
     public void setOsSphere(String osSphere) {
-        mOsSphere = osSphere;
+        this.osSphere = osSphere;
     }
 
     public String getOsCylinder() {
-        return mOsCylinder;
+        return osCylinder;
     }
 
     public void setOsCylinder(String osCylinder) {
-        mOsCylinder = osCylinder;
+        this.osCylinder = osCylinder;
     }
 
     public String getOsAxis() {
-        return mOsAxis;
+        return osAxis;
     }
 
     public void setOsAxis(String osAxis) {
-        mOsAxis = osAxis;
+        this.osAxis = osAxis;
     }
 
     public String getOsAdd() {
-        return mOsAdd;
+        return osAdd;
     }
 
     public void setOsAdd(String osAdd) {
-        mOsAdd = osAdd;
+        this.osAdd = osAdd;
     }
 
     public String getOsDeg() {
-        return mOsDeg;
+        return osDeg;
     }
 
     public void setOsDeg(String osDeg) {
-        mOsDeg = osDeg;
+        this.osDeg = osDeg;
     }
 
     public String getOsLens() {
-        return mOsLens;
+        return osLens;
     }
 
     public void setOsLens(String osLens) {
-        mOsLens = osLens;
+        this.osLens = osLens;
     }
 
     public String getOsIndex() {
-        return mOsIndex;
+        return osIndex;
     }
 
     public void setOsIndex(String osIndex) {
-        mOsIndex = osIndex;
+        this.osIndex = osIndex;
     }
 
     public String getOsCoating() {
-        return mOsCoating;
+        return osCoating;
     }
 
     public void setOsCoating(String osCoating) {
-        mOsCoating = osCoating;
+        this.osCoating = osCoating;
     }
 
     public String getOsPrice() {
-        return mOsPrice;
+        return osPrice;
     }
 
     public void setOsPrice(String osPrice) {
-        mOsPrice = osPrice;
+        this.osPrice = osPrice;
     }
 
     public String getEdited() {
-        return mEdited;
+        return edited;
     }
 
     public void setEdited(String edited) {
-        mEdited = edited;
+        this.edited = edited;
     }
 }
